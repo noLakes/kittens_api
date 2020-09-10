@@ -18,7 +18,7 @@ class KittensController < ApplicationController
   end
 
   def index
-    @kittens = Kitten.all,order("created_at DESC")
+    @kittens = Kitten.all.order("created_at DESC")
   end
 
   def edit
