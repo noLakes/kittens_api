@@ -16,10 +16,24 @@ class KittensController < ApplicationController
 
   def show
     @kitten = Kitten.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: @kitten }
+    end
+
   end
 
   def index
     @kittens = Kitten.all.order("created_at DESC")
+
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: @kittens }
+    end
+
   end
 
   def edit
