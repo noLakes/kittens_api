@@ -1,0 +1,15 @@
+<%= form_with model: @kitten, remote: true do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+  </br></br>
+  <%= f.label :age, "Age" %>
+  <%= f.text_field :age %>
+  </br></br>
+  <%= f.label :cuteness, "Cuteness"%>
+  <%= f.select( :cuteness, 1..10.times { |i| i + 1} ) %>
+  </br></br>
+  <%= f.label :softness, "Softness"%>
+  <%= f.select( :softness, 1..10.times { |i| i + 1} ) %>
+  </br></br>
+  <%= f.submit :submit, name: nil%>
+<% end %>
