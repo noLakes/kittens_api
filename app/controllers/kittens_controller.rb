@@ -27,7 +27,7 @@ class KittensController < ApplicationController
 
   def update
     @kitten = Kitten.find(params[:id])
-    
+
     if @kitten.update(kitten_params)
       redirect_to @kitten
     else
@@ -36,6 +36,7 @@ class KittensController < ApplicationController
   end
 
   def destroy
+    @kitten = Kitten.find(params[:id])
     @kitten.destroy
     redirect_to root_path
   end
